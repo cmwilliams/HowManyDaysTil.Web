@@ -192,6 +192,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CanadaHolidays.ics" />
+    <Content Include="Content\bootstrap-1.css" />
+    <Content Include="Content\bootstrap-2.css" />
+    <Content Include="Content\bootstrap-3.css" />
+    <Content Include="Content\bootstrap-4.css" />
+    <Content Include="Content\bootstrap-5.css" />
+    <Content Include="Content\bootstrap-6.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font\fontawesome-webfont.svg" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\jquery.lightbox-0.5.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -256,22 +271,62 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Scripts\jquery-ui-1.10.0.js" />
-    <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.1.debug.js" />
-    <Content Include="Scripts\knockout-2.2.1.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\address.png" />
+    <Content Include="Images\current.png" />
+    <Content Include="Images\delicious.png" />
+    <Content Include="Images\email.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\flickr.png" />
+    <Content Include="Images\glyphicons-halflings-white.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\google.png" />
+    <Content Include="Images\lightbox-blank.gif" />
+    <Content Include="Images\lightbox-btn-close.gif" />
+    <Content Include="Images\lightbox-btn-next.gif" />
+    <Content Include="Images\lightbox-btn-prev.gif" />
+    <Content Include="Images\lightbox-ico-loading.gif" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\mobile.png" />
+    <Content Include="Images\myspace.png" />
+    <Content Include="Images\person.png" />
+    <Content Include="Images\phone.png" />
+    <Content Include="Images\reddit.png" />
+    <Content Include="Images\stumbleupon.png" />
+    <Content Include="Images\style-1.png" />
+    <Content Include="Images\style-2.png" />
+    <Content Include="Images\style-3.png" />
+    <Content Include="Images\style-4.png" />
+    <Content Include="Images\style-5.png" />
+    <Content Include="Images\style-6.png" />
+    <Content Include="Images\style-default.png" />
+    <Content Include="Images\tumblr.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\vimeo.png" />
+    <Content Include="Images\youtube.png" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap-tooltip_2.js" />
+    <Content Include="Scripts\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap-typeahead.js" />
+    <Content Include="Scripts\gcal.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.min.js" />
+    <Content Include="Scripts\prettify.js" />
+    <Content Include="Scripts\track.js" />
+    <Content Include="Scripts\widgets.js" />
     <Content Include="USHolidays.ics" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -280,21 +335,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\_references.js" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -319,6 +359,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\FontAwesome.otf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

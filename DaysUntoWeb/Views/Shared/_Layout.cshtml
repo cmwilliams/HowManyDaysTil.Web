@@ -1,48 +1,394 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
+<head>
+    <meta charset="utf-8">
+    <title>Days Unto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Days Unto">
+    <meta name="author" content="Mike Williams">
+    @Styles.Render("~/css")
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+</head>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+<body>
+
+    <div class="navbar navbar-fixed-top hidden-desktop">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Days Unto</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="#" onclick="$('html,body').animate({scrollTop: $('#work-experience').offset().top}, 1500);">Work experience</a></li>
+                        <li><a href="#" onclick="$('html,body').animate({scrollTop: $('#skills').offset().top}, 1500);">Skills</a></li>
+                        <li><a href="#portifolio" onclick="$('html,body').animate({scrollTop: $('#portifolio').offset().top}, 1500);">Portifolios</a></li>
+                        <li><a href="#education" onclick="$('html,body').animate({scrollTop: $('#education').offset().top}, 1500);">Education</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div id="column-1" class="span6">
+                <div class="row">
+                    <div id="infoyou" class="span6">
+                        <div class="breadcrumb">
+                          
+                                <div class="well well-small">
+                                    <i class="icon-calendar icon-4x pull-left icon-border"></i>
+                                    <h1>Days Unto</h1>
+                                    The easiest way to countdown your life's events.
+                                    <p>&nbsp;</p>
+    </div>
+                               
+                          
+                            
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!--/infoyou-->
+                    <div id="QuicContact" class="span6 pagination-centered visible-phone">
+                        <div class="breadcrumb">
+                            <a href="#" class="tooltip-test" data-original-title="Facebook">
+                                <img src="/images/facebook.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Twitter">
+                                <img src="/images/twitter.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Google">
+                                <img src="/images/google.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="LinkedIn">
+                                <img src="/images/linkedin.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Flickr">
+                                <img src="/images/flickr.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Tumblr">
+                                <img src="/images/tumblr.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Youtube">
+                                <img src="/images/youtube.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Vimeo">
+                                <img src="/images/vimeo.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="MySpace">
+                                <img src="/images/myspace.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Reddit">
+                                <img src="/images/reddit.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Stumbleupon">
+                                <img src="/images/stumbleupon.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Delicious">
+                                <img src="/images/delicious.png" width="32">
+                            </a>
+                        </div>
+                    </div>
+                    <!--/quickcontact-->
+                </div>
+                <!--/row-->
+                <div class="row">
+                    <div class="span6">
+                        <div id="work-experience" class="breadcrumb">
+                            <legend>
+                                <h2>Upcoming events</h2>
+                            </legend>
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span5">
+                                        @RenderBody()
+                                        <span class="label label-info">Cosy Interfaces, Full-time</span>
+                                        <a class="tooltip-test" data-original-title="Current work">
+                                            <img src="/images/current.png" width="32">
+                                        </a>
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliqua erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla mcorper suscipit lobortis nisl ut aliquip.
+                                    </div>
+                                    <!--/span5-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <hr>
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span5">
+                                        <span class="label label-info">Cosy Interfaces, Full-time</span>
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliqua erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla mcorper suscipit lobortis nisl ut aliquip.
+                                    </div>
+                                    <!--/span5-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <hr>
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span5">
+                                        <span class="label label-info">Cosy Interfaces, Full-time</span>
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliqua erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla mcorper suscipit lobortis nisl ut aliquip.
+                                    </div>
+                                    <!--/span5-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+
+                            <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                            <div class="clearfix"></div>
+
+                        </div>
+                        <!--/breadcrumb-->
+                    </div>
+                    <!--/span6-->
+                </div>
+                <!--/row-->
+               
+            </div>
+            <!--/span6-->
+            <div id="column-2" class="span6">
+                <div class="row">
+                    <div id="QuicContact" class="span6 pagination-centered hidden-phone">
+                        <div class="breadcrumb">
+                            <a href="#" class="tooltip-test" data-original-title="Facebook">
+                                <img src="/images/facebook.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Twitter">
+                                <img src="/images/twitter.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Google">
+                                <img src="/images/google.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="LinkedIn">
+                                <img src="/images/linkedin.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Flickr">
+                                <img src="/images/flickr.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Tumblr">
+                                <img src="/images/tumblr.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Youtube">
+                                <img src="/images/youtube.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Vimeo">
+                                <img src="/images/vimeo.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="MySpace">
+                                <img src="/images/myspace.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Reddit">
+                                <img src="/images/reddit.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Stumbleupon">
+                                <img src="/images/stumbleupon.png" width="32">
+                            </a>
+                            <a href="#" class="tooltip-test" data-original-title="Delicious">
+                                <img src="/images/delicious.png" width="32">
+                            </a>
+                        </div>
+                    </div>
+                    <!--/quickcontact-->
+                </div>
+                <!--/row-->
+                <div class="row">
+                    <div class="span6">
+                        <div id="skills" class="breadcrumb">
+                              <div class="well well-small">
+                                    <i class="icon-heart icon-2x pull-left"></i>
+                                    <span style="font-size: 2.0em;">Join us!</span><br/><br/>
+                                    Keep track of your own events! Simply sign in using Facebook or Twitter and begin adding your own events.
+                                   
+    </div>
+                          
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-success">PHP</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-success progress-striped active">
+                                            <div class="bar" style="width: 88%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-success">HTML</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-success progress-striped active">
+                                            <div class="bar" style="width: 93%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-success">Javascript</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-success progress-striped active">
+                                            <div class="bar" style="width: 76%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-success">CSS</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-success progress-striped active">
+                                            <div class="bar" style="width: 82%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-warning">Fireworks</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-warning progress-striped active">
+                                            <div class="bar" style="width: 69%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-warning">Photoshop</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-warning progress-striped active">
+                                            <div class="bar" style="width: 55%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-warning">Illstrator</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-warning progress-striped active">
+                                            <div class="bar" style="width: 48%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="span6">
+                                    <div class="span1">
+                                        <span class="label label-important">Flash</span>
+                                    </div>
+                                    <!--/span1-->
+                                    <div class="span4">
+                                        <div class="progress progress-danger progress-striped active">
+                                            <div class="bar" style="width: 38%"></div>
+                                        </div>
+                                        <!--/progress bar-->
+                                    </div>
+                                    <!--/span4-->
+                                </div>
+                                <!--/span6-->
+                            </div>
+                            <!--/row-->
+
+                            <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                            <div class="clearfix"></div>
+
+                        </div>
+                        <!--/breadcrumb-->
+                    </div>
+                    <!--/span6-->
+                </div>
+                <!--/row-->
+                
+            </div>
+            <!--/span6-->
+        </div>
+        <!--/row-->
+    </div>
+    <!-- /container -->
+
+    @Scripts.Render("~/scripts")
+    @RenderSection("scripts", required: false)
+
+
+    
+
+</body>
 </html>
+
+
+
+
+
