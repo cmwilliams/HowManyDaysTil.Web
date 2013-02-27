@@ -18,9 +18,9 @@ namespace DaysUntoWeb
             //    clientId: "",
             //    clientSecret: "");
 
-            //OAuthWebSecurity.RegisterTwitterClient(
-            //    consumerKey: "",
-            //    consumerSecret: "");
+            OAuthWebSecurity.RegisterTwitterClient(
+                consumerKey: "AbSUbjiiZ3H7er0qN8t0w",
+                consumerSecret: "4eqLlX4ItOPAaU4G1gAMSLDJlzUubMVXt7MKZ3kvoaY");
 
             OAuthWebSecurity.RegisterFacebookClient(
                 appId: "281606021969932",

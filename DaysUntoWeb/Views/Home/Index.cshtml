@@ -1,4 +1,105 @@
-﻿<div class="calendar event_date"> 
-		<span class="month">Jul</span> 
-		<span class="day">4</span> 
-	</div> 	
+﻿@using DaysUntoWeb.Helpers
+@model DaysUntoWeb.Models.HomeViewModel
+
+<div id="column-1" class="span6">
+    <div class="row">
+        <div id="infoyou" class="span6">
+            <div class="breadcrumb">
+                <div class="well well-small">
+                    <i class="icon-calendar icon-4x pull-left icon-border"></i>
+                    <h1>Days Unto</h1>
+                    The easiest way to countdown your life's events. Keep track of your own events! Simply sign in using Facebook or Twitter and begin adding your own events.
+                    <br />
+                    <br />
+                     @if (!Request.IsAuthenticated)
+                     {
+                         using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
+                         {
+                             @Html.AntiForgeryToken()
+                             <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account">Sign in with Facebook</button>
+                             <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account">Sign in with Twitter</button>
+                         }
+                     }
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--/row-->
+    <div class="row">
+        <div class="span6">
+            <div id="upcoming-events" class="breadcrumb">
+                <legend>Upcoming @Model.Country events
+                </legend>
+                @foreach (var holiday in Model.Holidays)
+                {
+                    <div class="row">
+                        <div class="span6">
+                            <div class="span5">
+                                <div class="calendar event_date">
+                                    <span class="month">@Html.GetMonthName(holiday.HolidayDate)</span>
+                                    <span class="day">@holiday.HolidayDate.Day</span>
+                                </div>
+                                <h2>@holiday.HolidayName</h2>
+                                <span class="label label-info">@Html.DisplayDaysLeft(holiday.HolidayDate)</span>
+                            </div>
+                            <!--/span5-->
+                        </div>
+                        <!--/span6-->
+                    </div>
+                    <!--/row-->
+                    <hr />
+                }
+
+
+
+                <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                <div class="clearfix"></div>
+
+            </div>
+            <!--/breadcrumb-->
+        </div>
+        <!--/span6-->
+    </div>
+    <!--/row-->
+
+</div>
+<!--/span6-->
+<div id="column-2" class="span6">
+
+    <div class="row">
+        <div class="span6">
+            <div id="your-upcoming-events" class="breadcrumb">
+                <div class="well well-small">
+                   
+                    @if (Request.IsAuthenticated)
+                    {  
+                        <i class="icon-heart icon-2x pull-left"></i><span style="font-size: 2.0em;">Welcome back, @User.Identity.Name</span>
+                        @Html.ActionLink("Sign Out", "LogOff", "Account", null, new{@class = "btn pull-right"})<br/><br/>
+                       
+                        <span style="font-size: 1.4em;">Here are your upcoming events for this year!</span>
+                    }
+                    else
+                    {
+                         <span style="font-size: 2.0em;">Your Upcoming Events!</span>
+                    }
+                   
+
+                    <!--/span6-->
+                </div>
+                <!--/row-->
+
+
+                <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                <div class="clearfix"></div>
+
+            </div>
+            <!--/breadcrumb-->
+        </div>
+        <!--/span6-->
+    </div>
+    <!--/row-->
+
+</div>
+<!--/span6-->
+

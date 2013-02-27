@@ -1,36 +1,41 @@
 ﻿@model DaysUntoWeb.Models.RegisterExternalLoginModel
-@{
-    ViewBag.Title = "Register";
-}
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
-</hgroup>
+<div id="column-1" class="span6">
+    <div class="row">
+        <div id="infoyou" class="span6">
+            <div class="breadcrumb">
+                <div class="well well-small">
+                    <i class="icon-calendar icon-4x pull-left icon-border"></i>
+                    <h1>Days Unto</h1>
+                    The easiest way to countdown your life's events. Keep track of your own events! Simply sign in using Facebook or Twitter and begin adding your own events.
+                    <br />
+                    <br />
+                    <hr/>
+                    <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
+                    <p>
+                        You've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
+                        Please enter a user name for this site below and click the Confirm button to finish
+                        logging in.
+                    </p>
+                    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <fieldset>
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName)
+                            @Html.ValidationMessageFor(m => m.UserName)
+                            @Html.HiddenFor(m => m.ExternalLoginData)
+                            <button type="submit" class="btn" style="vertical-align: top;">Submit</button>
+                        </fieldset>
+                    }
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
-@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Association Form</legend>
-        <p>
-            You've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
-            Please enter a user name for this site below and click the Confirm button to finish
-            logging in.
-        </p>
-        <ol>
-            <li class="name">
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-        </ol>
-        @Html.HiddenFor(m => m.ExternalLoginData)
-        <input type="submit" value="Register" />
-    </fieldset>
-}
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+

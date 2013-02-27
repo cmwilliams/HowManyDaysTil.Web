@@ -182,16 +182,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Infrastructure\Data\DaysUntoContext.cs" />
     <Compile Include="Infrastructure\Entities\CalendarEvent.cs" />
     <Compile Include="Infrastructure\Entities\Holiday.cs" />
     <Compile Include="Infrastructure\Entities\UserProfile.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CanadaHolidays.ics" />
+    <Content Include="Content\font\zocial-regular-webfont.svg" />
+    <Content Include="Content\zocial.css" />
+    <Content Include="Migrations\Seed_Data\CanadaHolidays.ics" />
     <Content Include="Content\bootstrap-1.css" />
     <Content Include="Content\bootstrap-2.css" />
     <Content Include="Content\bootstrap-3.css" />
@@ -327,7 +331,7 @@
     <Content Include="Scripts\prettify.js" />
     <Content Include="Scripts\track.js" />
     <Content Include="Scripts\widgets.js" />
-    <Content Include="USHolidays.ics" />
+    <Content Include="Migrations\Seed_Data\USHolidays.ics" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -365,6 +369,11 @@
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.woff" />
     <Content Include="Content\font\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\font\zocial-regular-webfont.eot" />
+    <Content Include="Content\font\zocial-regular-webfont.ttf" />
+    <Content Include="Content\font\zocial-regular-webfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

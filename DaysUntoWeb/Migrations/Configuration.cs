@@ -19,7 +19,7 @@ namespace DaysUntoWeb.Migrations
         {
             //Populate US Dates
 
-            var calendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\USHolidays.ics");
+            var calendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\USHolidays.ics");
             var occurrences = calendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
                                                        new iCalDateTime(DateTime.Now.Year, 12, 31))
                                        .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);
@@ -46,7 +46,7 @@ namespace DaysUntoWeb.Migrations
 
             //Populate CA Dates
 
-            var caCalendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\CanadaHolidays.ics");
+            var caCalendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\CanadaHolidays.ics");
             var caOccurrences = caCalendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
                                                            new iCalDateTime(DateTime.Now.Year, 12, 31))
                                            .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);

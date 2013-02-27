@@ -30,7 +30,8 @@ namespace DaysUntoWeb
                 "~/Content/bootstrap-2.css",
                 "~/Content/font-awesome.css",
                 "~/Content/bootstrap-responsive.css",
-                "~/Content/jquery.lightbox-0.5.css"));
+                "~/Content/jquery.lightbox-0.5.css",
+                "~/Content/zocial.css"));
 
            
         }
