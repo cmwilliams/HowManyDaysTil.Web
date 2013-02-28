@@ -23,7 +23,8 @@ namespace DaysUntoWeb
                         "~/Scripts/bootstrap-carousel.js",
                         "~/Scripts/bootstrap-typeahead.js",
                         "~/Scripts/application.js",
-                        "~/Scripts/jquery.lightbox-0.5.js"));
+                        "~/Scripts/jquery.lightbox-0.5.js",
+                        "~/Scripts/bootstrap.file-input.js"));
 
          
             bundles.Add(new StyleBundle("~/css").Include(

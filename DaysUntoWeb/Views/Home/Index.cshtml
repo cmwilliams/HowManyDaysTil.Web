@@ -5,21 +5,39 @@
     <div class="row">
         <div id="infoyou" class="span6">
             <div class="breadcrumb">
-                <div class="well well-small">
+                <div class="well-small">
                     <i class="icon-calendar icon-4x pull-left icon-border"></i>
                     <h1>Days Unto</h1>
-                    The easiest way to countdown your life's events. Keep track of your own events! Simply sign in using Facebook or Twitter and begin adding your own events.
+                    The easiest way to countdown your life's events. Keep track of your own events!
                     <br />
                     <br />
-                     @if (!Request.IsAuthenticated)
-                     {
-                         using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
-                         {
-                             @Html.AntiForgeryToken()
-                             <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account">Sign in with Facebook</button>
-                             <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account">Sign in with Twitter</button>
-                         }
-                     }
+                    @if (!Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account">Sign in with Facebook</button>
+                            <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account">Sign in with Twitter</button>
+                        }
+                    }
+                    else
+                    {
+                        <hr style="margin: 0;"/>
+                        <div class="well-small">
+                            <h2 style="padding-bottom: 4px;">Add Events</h2>
+                            Manual Entry<br/>
+                            <form accept-charset="UTF-8" action="" method="post">
+                                <input class="input-medium" name="name" placeholder="Name" type="text">
+                                <input class="input-medium" name="username" placeholder="Date" type="text">
+                                <button class="btn" style="vertical-align: top;" type="submit">Add</button>
+                            </form>
+                            Import your calendar (.ics) file.<br/>
+                            <form accept-charset="UTF-8" action="" method="post">
+                                <input class="input-file" name="calendarfile" title="Select Calendar File"  type="file">
+                                <button class="btn" style="vertical-align: top;" type="submit">Import</button>
+                            </form>
+                        </div>
+                    }
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -29,8 +47,8 @@
     <div class="row">
         <div class="span6">
             <div id="upcoming-events" class="breadcrumb">
-                <legend>Upcoming @Model.Country events
-                </legend>
+                <h1>Upcoming @Model.Country events
+                </h1><br/>
                 @foreach (var holiday in Model.Holidays)
                 {
                     <div class="row">
@@ -40,7 +58,7 @@
                                     <span class="month">@Html.GetMonthName(holiday.HolidayDate)</span>
                                     <span class="day">@holiday.HolidayDate.Day</span>
                                 </div>
-                                <h2>@holiday.HolidayName</h2>
+                                <h3>@holiday.HolidayName</h3>
                                 <span class="label label-info">@Html.DisplayDaysLeft(holiday.HolidayDate)</span>
                             </div>
                             <!--/span5-->
@@ -70,27 +88,71 @@
     <div class="row">
         <div class="span6">
             <div id="your-upcoming-events" class="breadcrumb">
-                <div class="well well-small">
-                   
-                    @if (Request.IsAuthenticated)
-                    {  
-                        <i class="icon-heart icon-2x pull-left"></i><span style="font-size: 2.0em;">Welcome back, @User.Identity.Name</span>
-                        @Html.ActionLink("Sign Out", "LogOff", "Account", null, new{@class = "btn pull-right"})<br/><br/>
-                       
-                        <span style="font-size: 1.4em;">Here are your upcoming events for this year!</span>
-                    }
-                    else
-                    {
-                         <span style="font-size: 2.0em;">Your Upcoming Events!</span>
-                    }
-                   
 
-                    <!--/span6-->
-                </div>
-                <!--/row-->
+                    @if (WebSecurity.IsAuthenticated)
+                    {  
+                     
+                        <div class="row">
+                            <div class="row pull-right">
+                                <span style="font-size: 1.2em; font-weight: bold; padding-right: 5px;">Welcome back, @WebSecurity.CurrentUserName</span>
+                                @Html.ActionLink("Sign Out", "LogOff", "Account", null, new { @class = "btn " })
+                            </div>
+                         
+
+                        </div>
+                        if (Model.CalendarEvents.Any())
+                        {
+                            <span style="font-size: 1.4em;">Here are your upcoming events for this year!</span>
+                        }
+                        else
+                        {
+                             <div id="upcoming-events" class="breadcrumb">
+                <h1>Your upcoming events
+                </h1><br/>
+                @foreach (var holiday in Model.Holidays)
+                {
+                    <div class="row">
+                        <div class="span6">
+                            <div class="span5">
+                                <div class="calendar event_date">
+                                    <span class="month">@Html.GetMonthName(holiday.HolidayDate)</span>
+                                    <span class="day">@holiday.HolidayDate.Day</span>
+                                </div>
+                                <h3>@holiday.HolidayName</h3>
+                                <span class="label label-info">@Html.DisplayDaysLeft(holiday.HolidayDate)</span>
+                            </div>
+                            <!--/span5-->
+                        </div>
+                        <!--/span6-->
+                    </div>
+                    <!--/row-->
+                    <hr />
+                }
+
 
 
                 <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                <div class="clearfix"></div>
+
+            </div>
+                        }
+
+
+                    }
+                    else
+                    {
+                        <span style="font-size: 2.0em;">Reserved for <strong>your</strong> upcoming events!</span>
+                    }
+
+
+
+                </div>
+
+
+                @if (Model.CalendarEvents.Any())
+                {
+                    <a class="pull-right" onclick=" $('html,body').animate({ scrollTop: $('#infoyou').offset().top }, 1500); "><i class="icon-circle-arrow-up" style="cursor: pointer;"></i></a>
+                }
                 <div class="clearfix"></div>
 
             </div>
@@ -100,6 +162,5 @@
     </div>
     <!--/row-->
 
-</div>
 <!--/span6-->
 

@@ -322,6 +322,7 @@
     <Content Include="Scripts\bootstrap-tooltip_2.js" />
     <Content Include="Scripts\bootstrap-transition.js" />
     <Content Include="Scripts\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap.file-input.js" />
     <Content Include="Scripts\gcal.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
