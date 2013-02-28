@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+
 /*!
  * Bootstrap v2.0.4
  *
@@ -163,7 +167,7 @@ textarea {
 body {
     padding-top: 60px;
     margin: 0;
-    font-family: 'Cabin', Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.9);
@@ -449,7 +453,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-     font-family: 'Cabin', Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     color: inherit;
     text-rendering: optimizelegibility;
@@ -769,7 +773,7 @@ input,
 button,
 select,
 textarea {
-    font-family: 'Cabin', Verdana, sans-serif;
+   font-family: 'Open Sans', sans-serif;
 }
 
 label {
@@ -3684,7 +3688,7 @@ input[type="submit"].btn {
 
     .navbar-search .search-query {
         padding: 4px 9px;
-        font-family: 'Cabin', Verdana, sans-serif;
+       font-family: 'Open Sans', sans-serif;
         font-size: 13px;
         font-weight: normal;
         line-height: 1;
@@ -4991,7 +4995,7 @@ h6 {
     h4 small,
     h5 small,
     h6 small {
-        font-family: 'Cabin', Verdana, sans-serif;
+       font-family: 'Open Sans', sans-serif;
         color: rgba(255, 255, 255, 0.9);
     }
 

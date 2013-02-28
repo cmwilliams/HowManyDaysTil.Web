@@ -35,19 +35,13 @@
                         <li><a href="#" onclick="$('html,body').animate({scrollTop: $('#your-upcoming-events').offset().top}, 1500);">Your Upcoming Events</a></li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
             </div>
         </div>
     </div>
 
     <div class="container">
-
-        <div class="row">
-       @RenderBody()
+        @RenderBody()
     </div>
-    <!--/row-->
-    </div>
-    <!-- /container -->
 
     @Scripts.Render("~/scripts")
     @RenderSection("scripts", required: false)
