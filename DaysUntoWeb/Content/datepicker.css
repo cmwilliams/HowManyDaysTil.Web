@@ -71,16 +71,16 @@
 .datepicker td.active:hover {
   color: #ffffff;
   background-color: #006dcc;
-  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-image: -moz-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ad1d28), to(#ad1d28));
+  background-image: -webkit-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: -o-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: linear-gradient(to bottom, #ad1d28, #ad1d28);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  border-color: #0044cc #0044cc #002a80;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffad1d28', endColorstr='#ffad1d28', GradientType=0);
+  border-color: #ad1d28 #ad1d28 #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
+  *background-color: #ad1d28;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -100,14 +100,14 @@
 .datepicker td.active[disabled],
 .datepicker td.active:hover[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
+  background-color: #ad1d28;
+  *background-color: #ad1d28;
 }
 .datepicker td.active:active,
 .datepicker td.active:hover:active,
 .datepicker td.active.active,
 .datepicker td.active:hover.active {
-  background-color: #003399 \9;
+  background-color: #ad1d28 \9;
 }
 .datepicker td span {
   display: block;
@@ -127,16 +127,16 @@
 .datepicker td span.active {
   color: #ffffff;
   background-color: #ad1d28;
-  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-image: -moz-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ad1d28), to(#ad1d28));
+  background-image: -webkit-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: -o-linear-gradient(top, #ad1d28, #ad1d28);
+  background-image: linear-gradient(to bottom, #ad1d28, #ad1d28);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-  border-color: #0044cc #0044cc #002a80;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffad1d28', endColorstr='#ffad1d28', GradientType=0);
+  border-color: #ad1d28 #ad1d28 #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
+  *background-color: #ad1d28;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -150,12 +150,12 @@
 .datepicker td span.active.disabled,
 .datepicker td span.active[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
+  background-color: #ad1d28;
+  *background-color: #ad1d28;
 }
 .datepicker td span.active:active,
 .datepicker td span.active.active {
-  background-color: #003399 \9;
+  background-color: #ad1d28 \9;
 }
 .datepicker td span.old {
   color: #999999;
@@ -171,7 +171,7 @@
   cursor: pointer;
 }
 .datepicker thead tr:first-child th:hover {
-  background: #eeeeee;
+  /*background: #eeeeee;*/
 }
 .input-append.date .add-on i,
 .input-prepend.date .add-on i {
