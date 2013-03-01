@@ -24,7 +24,8 @@ namespace DaysUntoWeb
                         "~/Scripts/bootstrap-typeahead.js",
                         "~/Scripts/application.js",
                         "~/Scripts/jquery.lightbox-0.5.js",
-                        "~/Scripts/bootstrap.file-input.js"));
+                        "~/Scripts/bootstrap.file-input.js",
+                        "~/Scripts/bootstrap-datepicker.js"));
 
          
             bundles.Add(new StyleBundle("~/css").Include(
@@ -32,7 +33,8 @@ namespace DaysUntoWeb
                 "~/Content/font-awesome.css",
                 "~/Content/bootstrap-responsive.css",
                 "~/Content/jquery.lightbox-0.5.css",
-                "~/Content/zocial.css"));
+                "~/Content/zocial.css",
+                "~/Content/datepicker.css"));
 
            
         }

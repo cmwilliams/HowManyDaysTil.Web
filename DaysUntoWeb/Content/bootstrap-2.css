@@ -165,7 +165,7 @@ textarea {
 }
 
 body {
-    padding-top: 60px;
+    padding-top: 0px;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -5869,7 +5869,7 @@ display: block;
        
     }
     .calendar > .day {
-        padding: 10px 2px 2px 2px;
+        padding: 5px 2px 2px 2px;
         text-align: center;
         font-weight: bold;
         font-size: 24px;
