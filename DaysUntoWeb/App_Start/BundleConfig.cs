@@ -34,7 +34,7 @@ namespace DaysUntoWeb
 
          
             bundles.Add(new StyleBundle("~/css").Include(
-                "~/Content/bootstrap-2.css",
+                "~/Content/bootstrap.css",
                 "~/Content/font-awesome.css",
                 "~/Content/bootstrap-responsive.css",
                 "~/Content/jquery.lightbox-0.5.css",

@@ -59,6 +59,7 @@
 .datepicker td.day:hover {
   background: #ad1d28;
   cursor: pointer;
+    color: #ffffff;
 }
 .datepicker td.day.disabled {
   color: #eeeeee;

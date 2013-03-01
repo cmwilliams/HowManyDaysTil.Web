@@ -146,6 +146,50 @@ namespace DaysUntoWeb.Controllers
             return View();
         }
 
+        public PartialViewResult EditEvent(int id)
+        {
+            CalendarEvent calendarEvent = null;
+
+             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            if (user != null)
+            {
+                calendarEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == id);
+            }
+
+
+            var model = new EditEventViewModel
+                            {
+                                CalendarEvent = calendarEvent
+                            };
+
+            return PartialView(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditEvent(CalendarEvent calendarEvent)
+        {
+            CalendarEvent existingCalendarEvent;
+           
+            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            if (user == null)
+                return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
+
+
+            existingCalendarEvent =
+                user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == calendarEvent.CalendarEventId);
+
+            if (existingCalendarEvent == null)
+                return RedirectToAction("Index").Error("We couldn't find this event. Please try again.");
+
+
+            existingCalendarEvent.CalendarEventDate = calendarEvent.CalendarEventDate;
+            existingCalendarEvent.Name = calendarEvent.Name;
+            _context.SaveChanges();
+            return RedirectToAction("Index").Success("Event was successfully updated!");
+
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (_context != null)

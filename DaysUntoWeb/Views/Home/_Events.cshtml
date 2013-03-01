@@ -1,0 +1,58 @@
+﻿@using DaysUntoWeb.Helpers
+@model DaysUntoWeb.Models.HomeViewModel
+
+<div class="row">
+    <div class="span6">
+        <div id="your-upcoming-events" class="breadcrumb">
+            @if (WebSecurity.IsAuthenticated)
+            {
+                if (Model.CalendarEvents.Any())
+                {
+                <h1>Your upcoming events</h1>
+                <br />
+                    foreach (var calendarEvent in Model.CalendarEvents)
+                    {
+                <div class="row">
+                    <div class="span6">
+                        <div class="span5">
+                            <div class="calendar event_date">
+                                <span class="month">@Html.GetMonthName(calendarEvent.CalendarEventDate)</span>
+                                <span class="day">@calendarEvent.CalendarEventDate.Day</span>
+                            </div>
+                            <h3>@calendarEvent.Name </h3>
+                            <span class="pull-right">
+                                <a data-toggle="modal" title="edit event" style="cursor: pointer" onclick="showModal('#editModalContainerID', '#editModalBodyID', '@calendarEvent.CalendarEventId')"><i class="icon-edit"></i></a>
+                                <a data-id="@calendarEvent.CalendarEventId" href="#" title="remove event" class="removeItem"><i class="icon-remove"></i></a>
+                            </span>
+                            <span class="label label-info">@Html.DisplayDaysLeft(calendarEvent.CalendarEventDate)</span><br />
+
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                    }
+                }
+                else
+                {
+                <p>Please take a moment to add an event!</p>
+                }
+            }
+            else
+            {
+                <h2>Sign in below to start adding events</h2>
+                <br />
+                using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+                {
+                @Html.AntiForgeryToken()
+                <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account">Sign in with Facebook</button>
+                <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account">Sign in with Twitter</button>
+                }
+            }
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div id="editModalContainerID" class="modal hide fade" data-url='@Url.Action("EditEvent", "Home")'>
+    <div id="editModalBodyID"></div>
+</div>

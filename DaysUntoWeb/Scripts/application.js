@@ -2,7 +2,19 @@
 // IT'S ALL JUST JUNK FOR OUR DOCS!
 // ++++++++++++++++++++++++++++++++++++++++++
 
+function showModal(modalContainerId, modalBodyId, id) {
+    var url = $(modalContainerId).data('url');
+
+    $.get(url, { id: id }, function (data) {
+        $(modalBodyId).html(data);
+        $(modalContainerId).modal('show');
+    });
+};
+
+
 !function ($) {
+
+    
 
     $(function () {
 

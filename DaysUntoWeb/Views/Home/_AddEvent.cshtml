@@ -1,0 +1,18 @@
+﻿<hr style="margin: 0;" />
+<div class="well-small">
+    <h2 style="padding-bottom: 4px;">Add Events  @Html.ActionLink("Sign Out", "LogOff", "Account", null, new { @class = "btn pull-right", @style = "margin-top:8px;" })</h2>
+    Manual Entry<br />
+    @using (Html.BeginForm("ManualEntry", "Home", FormMethod.Post, new {@id = "entry-form"}))
+    {
+        <input class="input-medium" name="calendarName" id="calendarName" placeholder="Name" type="text" required />
+        <input class="input-medium datepicker" name="calendarDate" id="calendarDate" placeholder="Date" type="text" required readonly="readonly" />
+        <button class="btn" style="vertical-align: top;" type="submit">Add</button>
+    }
+    Import your calendar (.ics) file.<br />
+    @using (Html.BeginForm("ImportCalendar", "Home", FormMethod.Post, new {enctype = "multipart/form-data"}))
+    {
+
+        <input class="input-file" name="calendarfile" title="Select Calendar File" type="file" required />
+        <button class="btn" style="vertical-align: top;" type="submit">Import</button>
+    }
+</div>

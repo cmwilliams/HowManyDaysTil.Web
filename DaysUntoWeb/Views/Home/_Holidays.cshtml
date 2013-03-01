@@ -1,0 +1,27 @@
+﻿@using DaysUntoWeb.Helpers
+@model DaysUntoWeb.Models.HomeViewModel
+
+<div class="span6">
+    <div id="upcoming-events" class="breadcrumb">
+        <h1>Upcoming @Model.Country events </h1>
+        <br />
+        @foreach (var holiday in Model.Holidays)
+        {
+            <div class="row">
+                <div class="span6">
+                    <div class="span5">
+                        <div class="calendar event_date">
+                            <span class="month">@Html.GetMonthName(holiday.HolidayDate)</span>
+                            <span class="day">@holiday.HolidayDate.Day</span>
+                        </div>
+                        <h3>@holiday.HolidayName</h3>
+                        <span class="label label-info">@Html.DisplayDaysLeft(holiday.HolidayDate)</span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        }
+        <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#upcoming-events').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer; text-decoration: none;"></i></a>
+        <div class="clearfix"></div>
+    </div>
+</div>

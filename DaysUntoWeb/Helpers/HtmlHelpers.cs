@@ -9,7 +9,16 @@ namespace DaysUntoWeb.Helpers
         public static string DisplayDaysLeft(this HtmlHelper helper, DateTime eventDate)
         {
             var ts = eventDate - DateTime.Today.Date;
-            return ts.Days == 0 ? "Today's the day!" : String.Format("{0} days left", ts.Days);
+            switch (ts.Days)
+            {
+                case 0:
+                    return "Today's the day!";
+                case 1:
+                    return "1 day left";
+                default:
+                    return String.Format("{0} days left", ts.Days);
+            }
+
         }
 
         public static string GetMonthName(this HtmlHelper helper, DateTime eventDate)
