@@ -8,8 +8,8 @@ namespace DaysUntoWeb.Helpers
     {
         public static string DisplayDaysLeft(this HtmlHelper helper, DateTime eventDate)
         {
-            var ts = eventDate - DateTime.Now;
-            return String.Format("{0} days left", ts.Days);
+            var ts = eventDate - DateTime.Today.Date;
+            return ts.Days == 0 ? "Today's the day!" : String.Format("{0} days left", ts.Days);
         }
 
         public static string GetMonthName(this HtmlHelper helper, DateTime eventDate)

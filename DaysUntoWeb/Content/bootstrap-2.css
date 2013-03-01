@@ -1057,9 +1057,9 @@ textarea,
     input[readonly],
     select[readonly],
     textarea[readonly] {
-        cursor: not-allowed;
-        background-color: #dddddd;
-        border-color: #ddd;
+        cursor: pointer;
+        /*background-color: #dddddd;
+        border-color: #ddd;*/
     }
 
     input[type="radio"][disabled],
@@ -1178,10 +1178,13 @@ select:focus:required:invalid {
     input:focus:required:invalid:focus,
     textarea:focus:required:invalid:focus,
     select:focus:required:invalid:focus {
-        border-color: #e9322d;
+         border-color: #ad1d28;
+    border-style: solid;
+    border-width: 2px;
+        /*border-color: #e9322d;
         -webkit-box-shadow: 0 0 6px #f8b9b7;
         -moz-box-shadow: 0 0 6px #f8b9b7;
-        box-shadow: 0 0 6px #f8b9b7;
+        box-shadow: 0 0 6px #f8b9b7;*/
     }
 
 .form-actions {
@@ -5920,3 +5923,15 @@ display: block;
     border-width: thin;
     padding: 2px;
 }
+
+.label.error {
+    font-weight: bold;
+    color: #ad1d28;
+    padding: 2px 8px;
+    margin-top: 2px;
+    display: inline-block;
+}
+
+
+
+

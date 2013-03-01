@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using DaysUntoWeb.Helpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -16,11 +17,16 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+    @Scripts.Render("~/scripts")
+    @RenderSection("scripts", required: false)
 </head>
-
-<body>
-
-    <div class="navbar navbar-fixed-top hidden-desktop">
+    
+    
+  
+    <body>
+       @Html.Partial("_Flash")
+     
+        <div class="navbar navbar-fixed-top hidden-desktop">
         <div class="navbar-inner">
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -43,8 +49,7 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/scripts")
-    @RenderSection("scripts", required: false)
+    
 
 
 

@@ -25,7 +25,12 @@ namespace DaysUntoWeb
                         "~/Scripts/application.js",
                         "~/Scripts/jquery.lightbox-0.5.js",
                         "~/Scripts/bootstrap.file-input.js",
-                        "~/Scripts/bootstrap-datepicker.js"));
+                        "~/Scripts/bootstrap-datepicker.js",
+                        "~/Scripts/jquery.validate.js",
+                        "~/Scripts/jquery.validate.unobtrusive.js",
+                        "~/Scripts/jquery.validate.bootstrap.js",
+                        "~/Scripts/jquery.cookie.js",
+                        "~/Scripts/jQuery.flashMessage.js"));
 
          
             bundles.Add(new StyleBundle("~/css").Include(
