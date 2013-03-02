@@ -198,6 +198,7 @@
     <Content Include="Content\datepicker.css" />
     <Content Include="Content\font\zocial-regular-webfont.svg" />
     <Content Include="Content\zocial.css" />
+    <Content Include="Images\sample.PNG" />
     <Content Include="Migrations\Seed_Data\CanadaHolidays.ics" />
     <Content Include="Content\bootstrap-1.css" />
     <Content Include="Content\bootstrap-2.css" />
