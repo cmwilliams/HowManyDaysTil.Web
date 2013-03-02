@@ -21,6 +21,34 @@ function showModal(modalContainerId, modalBodyId, id) {
         $('.datepicker').datepicker();
         $("#entry-form").validate();
 
+        $('.removeItem').click(function () {
+            var eventCalendarName = $(this).attr("data-name");
+            var form = $(this).closest("#deleteEventForm");
+
+            bootbox.confirm("Are you sure you want to delete the event: " + eventCalendarName + "?", function (result) {
+                if (result) {
+                    form.submit();
+                }
+            });
+        });
+        
+
+        //var stickyTop = $('#column-1').offset().top; // returns number 
+
+        //$(window).scroll(function () { // scroll event  
+
+        //    var windowTop = $(window).scrollTop(); // returns number
+
+        //    if (stickyTop < windowTop) {
+        //        $('#column-1').css({ position: 'fixed', top: 0 });
+        //    }
+        //    else {
+        //        $('#column-1').css('position', 'static');
+        //    }
+
+        //});
+
+
        
     // Disable certain links in docs
     $('section [href^=#]').click(function (e) {

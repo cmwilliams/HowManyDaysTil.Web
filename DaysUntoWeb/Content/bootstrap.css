@@ -2863,7 +2863,20 @@ button.close {
 }
 
 .btn-success {
-  background-color: #5bb75b;
+  background-color: #3a87ad;
+  *background-color: #3a87ad;
+  background-image: -ms-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3a87ad), to(#3a87ad));
+  background-image: -webkit-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -o-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: -moz-linear-gradient(top, #3a87ad, #3a87ad);
+  background-image: linear-gradient(top, #3a87ad, #3a87ad);
+  background-repeat: repeat-x;
+  border-color: #3a87ad #3a87ad #3a87ad;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  /*background-color: #5bb75b;
   *background-color: #51a351;
   background-image: -ms-linear-gradient(top, #62c462, #51a351);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
@@ -2875,7 +2888,7 @@ button.close {
   border-color: #51a351 #51a351 #387038;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
-  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);*/
 }
 
 .btn-success:hover,
@@ -2883,8 +2896,10 @@ button.close {
 .btn-success.active,
 .btn-success.disabled,
 .btn-success[disabled] {
-  background-color: #51a351;
-  *background-color: #499249;
+    background-color: #3a87ad;
+  *background-color: #3a87ad;
+  /*background-color: #51a351;
+  *background-color: #499249;*/
 }
 
 .btn-success:active,
@@ -3185,7 +3200,7 @@ input[type="submit"].btn.btn-mini {
 
 .alert {
   padding: 8px 35px 8px 14px;
-  margin-bottom: 18px;
+  margin-bottom: 5px;
   color: #c09853;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
@@ -5209,3 +5224,29 @@ display: block;
     margin-top: 2px;
     display: inline-block;
 }
+
+.fixed {
+     position: fixed;   
+    top: 20px;  
+    margin-left: 720px;  
+    background-color: #0f0 ! important;  
+}
+
+.sidebar-nav-fixed {
+     position:fixed;
+     top:60px;
+     width:21.97%;
+ }
+
+ @media (max-width: 767px) {
+     .sidebar-nav-fixed {
+         width:auto;
+     }
+ }
+
+ @media (max-width: 979px) {
+     .sidebar-nav-fixed {
+         position:static;
+        width: auto;
+     }
+ }

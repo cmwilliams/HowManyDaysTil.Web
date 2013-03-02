@@ -10,7 +10,7 @@
         $(target).addClass("alert-" + options.alert.toString().toLowerCase());
 
         if (typeof options.message === "string") {
-            $('p', target).html("<span>" + options.message + "</span>");
+            $('p', target).html("<h2>" + options.message + "</h2>");
         } else {
             target.empty().append(options.message);
         }

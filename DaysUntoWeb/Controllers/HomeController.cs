@@ -69,6 +69,11 @@ namespace DaysUntoWeb.Controllers
                     var calendars = iCalendar.LoadFromStream(calendarfile.InputStream);
                     var occurrences = calendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
                                                                new iCalDateTime(2020, 12, 31));
+                    if (occurrences.Count == 0)
+                    {
+                        return RedirectToAction("Index").Warning("0 records were imported. Please double check your file and try again.");
+                    }
+
                     foreach (var occurrence in occurrences)
                     {
                         var rc = occurrence.Source as IRecurringComponent;
@@ -168,15 +173,12 @@ namespace DaysUntoWeb.Controllers
         [HttpPost]
         public ActionResult EditEvent(CalendarEvent calendarEvent)
         {
-            CalendarEvent existingCalendarEvent;
-           
             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
             if (user == null)
                 return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
 
 
-            existingCalendarEvent =
-                user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == calendarEvent.CalendarEventId);
+            var existingCalendarEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == calendarEvent.CalendarEventId);
 
             if (existingCalendarEvent == null)
                 return RedirectToAction("Index").Error("We couldn't find this event. Please try again.");
@@ -187,6 +189,23 @@ namespace DaysUntoWeb.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index").Success("Event was successfully updated!");
 
+        }
+
+        [HttpPost]
+        public ActionResult DeleteEvent(int id)
+        {
+             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            if (user == null)
+                return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
+
+            var existingCalendarEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == id);
+
+            if (existingCalendarEvent == null)
+                return RedirectToAction("Index").Error("We couldn't find this event. Please try again.");
+
+            _context.CalendarEvents.Remove(existingCalendarEvent);
+            _context.SaveChanges();
+            return RedirectToAction("Index").Success("Event was successfully deleted!");
         }
 
 

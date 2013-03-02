@@ -21,8 +21,12 @@
                             </div>
                             <h3>@calendarEvent.Name </h3>
                             <span class="pull-right">
-                                <a data-toggle="modal" title="edit event" style="cursor: pointer" onclick="showModal('#editModalContainerID', '#editModalBodyID', '@calendarEvent.CalendarEventId')"><i class="icon-edit"></i></a>
-                                <a data-id="@calendarEvent.CalendarEventId" href="#" title="remove event" class="removeItem"><i class="icon-remove"></i></a>
+                               
+                                @using (Html.BeginForm("DeleteEvent", "Home", new { @id = calendarEvent.CalendarEventId }, FormMethod.Post, new { @id = "deleteEventForm" })) 
+                                {
+                                     <a data-toggle="modal" title="edit event" style="cursor: pointer" onclick="showModal('#editModalContainerID', '#editModalBodyID', '@calendarEvent.CalendarEventId')"><i class="icon-edit"></i></a>
+                                    <a data-id="@calendarEvent.CalendarEventId" data-name="@calendarEvent.Name" href="#" title="remove event" class="removeItem"><i class="icon-remove"></i></a>
+                                }
                             </span>
                             <span class="label label-info">@Html.DisplayDaysLeft(calendarEvent.CalendarEventDate)</span><br />
 
