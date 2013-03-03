@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using DaysUntoWeb.Infrastructure.Entities;
 
@@ -15,11 +14,9 @@ namespace DaysUntoWeb.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Infrastructure.Data.DaysUntoContext context)
+        private void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country)
         {
-            //Populate US Dates
-
-            var calendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\USHolidays.ics");
+            var calendars = iCalendar.LoadFromFile(fileName);
             var occurrences = calendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
                                                        new iCalDateTime(DateTime.Now.Year, 12, 31))
                                        .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);
@@ -34,55 +31,24 @@ namespace DaysUntoWeb.Migrations
                         context.Holidays.AddOrUpdate(
                             p => new { p.HolidayName, p.Country },
                             new Holiday
-                                {
-                                    HolidayDate = occurrence.Period.StartTime.Local,
-                                    Country = "US",
-                                    HolidayName = rc.Summary
-                                }
+                            {
+                                HolidayDate = occurrence.Period.StartTime.Local,
+                                Country = country,
+                                HolidayName = rc.Summary
+                            }
                             );
                     }
                 }
             }
+        }
 
-            //Populate CA Dates
+        protected override void Seed(Infrastructure.Data.DaysUntoContext context)
+        {
+            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\USHolidays.ics", context, "US");
+            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\CanadaHolidays.ics", context, "CA");
+            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\UKHolidays.ics", context, "UK");
 
-            var caCalendars = iCalendar.LoadFromFile(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\CanadaHolidays.ics");
-            var caOccurrences = caCalendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
-                                                           new iCalDateTime(DateTime.Now.Year, 12, 31))
-                                           .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);
-
-            foreach (var caOccurrence in caOccurrences)
-            {
-                var caRcc = caOccurrence.Source as IRecurringComponent;
-                if (caRcc != null)
-                {
-                    if (!caRcc.Summary.Contains("("))
-                    {
-                        context.Holidays.AddOrUpdate(
-                            p => new { p.HolidayName, p.Country },
-                            new Holiday
-                                {
-                                    HolidayDate = caOccurrence.Period.StartTime.Local,
-                                    Country = "CA",
-                                    HolidayName = caRcc.Summary
-                                }
-                            );
-                    }
-                }
-            }
-
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+          
         }
     }
 }

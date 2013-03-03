@@ -312,6 +312,7 @@
     <Content Include="Images\twitter.png" />
     <Content Include="Images\vimeo.png" />
     <Content Include="Images\youtube.png" />
+    <Content Include="Migrations\Seed_Data\UKHolidays.ics" />
     <Content Include="Scripts\application.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootstrap-alert.js" />
@@ -350,6 +351,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
@@ -402,6 +404,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\EditEvent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\daysunto.com - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\daysunto.com - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

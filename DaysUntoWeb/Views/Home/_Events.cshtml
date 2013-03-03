@@ -21,7 +21,6 @@
                             </div>
                             <h3>@calendarEvent.Name </h3>
                             <span class="pull-right">
-                               
                                 @using (Html.BeginForm("DeleteEvent", "Home", new { @id = calendarEvent.CalendarEventId }, FormMethod.Post, new { @id = "deleteEventForm" })) 
                                 {
                                      <a data-toggle="modal" title="edit event" style="cursor: pointer" onclick="showModal('#editModalContainerID', '#editModalBodyID', '@calendarEvent.CalendarEventId')"><i class="icon-edit"></i></a>
@@ -33,8 +32,11 @@
                         </div>
                     </div>
                 </div>
-                <hr />
+                        <hr />
+                
                     }
+                    <a class="hidden-desktop pull-right" onclick="$('html,body').animate({scrollTop: $('#infoyou').offset().top}, 1500);"><i class="icon-circle-arrow-up" style="cursor: pointer; text-decoration: none;"></i></a>
+                <div class="clearfix"></div>
                 }
                 else
                 {

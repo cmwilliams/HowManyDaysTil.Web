@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +9,7 @@ using DaysUntoWeb.Infrastructure.Entities;
 using DaysUntoWeb.Models;
 using WebMatrix.WebData;
 using DaysUntoWeb.Helpers;
+
 
 namespace DaysUntoWeb.Controllers
 {
@@ -24,6 +24,7 @@ namespace DaysUntoWeb.Controllers
 
         public ActionResult Index()
         {
+            
             //Grab Country Events
             var holidays = _context.Holidays
                                    .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")
