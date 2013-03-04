@@ -32,7 +32,8 @@ namespace DaysUntoWeb
                 "~/Scripts/jquery.validate.bootstrap.js",
                 "~/Scripts/jquery.cookie.js",
                 "~/Scripts/jQuery.flashMessage.js",
-                "~/Scripts/bootbox.js"));
+                "~/Scripts/bootbox.js",
+                "~/Scripts/spin.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

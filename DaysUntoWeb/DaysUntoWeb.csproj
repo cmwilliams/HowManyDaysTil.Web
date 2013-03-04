@@ -336,6 +336,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\prettify.js" />
+    <Content Include="Scripts\spin.js" />
     <Content Include="Scripts\track.js" />
     <Content Include="Scripts\widgets.js" />
     <Content Include="Migrations\Seed_Data\USHolidays.ics">
