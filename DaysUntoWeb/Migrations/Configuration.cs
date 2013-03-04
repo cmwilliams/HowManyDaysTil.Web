@@ -15,14 +15,13 @@ namespace DaysUntoWeb.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        private static void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country)
+        private static void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country, int endYear)
         {
             var path = AppDomain.CurrentDomain.BaseDirectory + "\\Migrations\\Seed_Data\\" + fileName;
 
             var calendars = iCalendar.LoadFromFile(path);
             var occurrences = calendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
-                                                       new iCalDateTime(DateTime.Now.Year, 12, 31))
-                                       .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);
+                                                       new iCalDateTime(endYear, 12, 31));
 
             foreach (var occurrence in occurrences)
             {
@@ -47,9 +46,9 @@ namespace DaysUntoWeb.Migrations
 
         protected override void Seed(Infrastructure.Data.DaysUntoContext context)
         {
-            SeedHolidays("USHolidays.ics", context, "US");
-            SeedHolidays("CanadaHolidays.ics", context, "CA");
-            SeedHolidays("UKHolidays.ics", context, "UK");
+            SeedHolidays("USHolidays.ics", context, "US", 2020);
+            SeedHolidays("CanadaHolidays.ics", context, "CA", 2020);
+            SeedHolidays("UKHolidays.ics", context, "UK", 2020);
 
           
         }
