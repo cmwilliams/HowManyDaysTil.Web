@@ -341,7 +341,9 @@
     <Content Include="Migrations\Seed_Data\USHolidays.ics">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -403,6 +405,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\daysunto.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\howmanydaystil.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\howmanydaystil.com - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
