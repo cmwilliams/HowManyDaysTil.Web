@@ -1,16 +1,4 @@
 ﻿@model DaysUntoWeb.Models.EditEventViewModel
-<script src="~/Scripts/jquery.js"></script>
-<script src="~/Scripts/bootstrap-modal.js"></script>
-<script src="~/Scripts/bootstrap-datepicker.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('.datepicker').datepicker();
-    });
-</script>
-
-
-
-
 <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
     <h3>Edit Event</h3>
@@ -30,7 +18,7 @@
                 <!-- E-mail -->
                 <label class="control-label" for="CalendarEventDate">Date</label>
                 <div class="controls">
-                    @Html.TextBoxFor(m => m.CalendarEvent.CalendarEventDate, new { @Value = (String.Format("{0:MM/dd/yyyy}", Model.CalendarEvent.CalendarEventDate)), @class = "input-xlarge datepicker", @readonly = "readonly"})
+                    @Html.TextBoxFor(m => m.CalendarEvent.CalendarEventDate, new { @Value = (String.Format("{0:MM/dd/yyyy}", Model.CalendarEvent.CalendarEventDate)), @class = "input-xlarge editDatepicker", @readonly = "readonly"})
                     
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Alike);
+
 
 /*!
  * Bootstrap v2.0.4
@@ -162,7 +162,7 @@ textarea {
 body {
   padding-top:0px;
   margin: 0;
-  font-family: Tahoma, 'Alike', serif;
+  font-family: Tahoma, serif;
   font-size: 13px;
   line-height: 18px;
   color: #333;

@@ -6,6 +6,9 @@ function showModal(modalContainerId, modalBodyId, id) {
     $.get(url, { id: id }, function (data) {
         $(modalBodyId).html(data);
         $(modalContainerId).modal('show');
+        $('.editDatepicker').datepicker({
+            autoclose: true
+        });
     });
 };
 
@@ -16,7 +19,11 @@ function showModal(modalContainerId, modalBodyId, id) {
 
     $(function () {
 
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({
+            autoclose: true
+        });
+     
+        
         $("#entry-form").validate();
 
         $('.removeItem').click(function () {

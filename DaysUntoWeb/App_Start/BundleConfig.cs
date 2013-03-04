@@ -36,6 +36,13 @@ namespace DaysUntoWeb
                 "~/Scripts/spin.js"));
 
 
+            bundles.Add(new ScriptBundle("~/Content/js/editevent").Include(
+                "~/Scripts/jquery.js",
+                "~/Scripts/bootstrap-modal.js",
+                "~/Scripts/bootstrap-datepicker.js"));
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-responsive.css",

@@ -49,17 +49,18 @@
             {
                 <h2>Sign in below to start adding events</h2>
                 <br />
-                using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
+                using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
                 {
-                    @Html.AntiForgeryToken()
-                    <div class="hidden-phone">
-                        <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account" style="display: inline-block;">Sign in with Facebook</button>
-                        <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account" style="display: inline-block;">Sign in with Twitter</button>
-                    </div>
-                    <div class="hidden-desktop">
-                        <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account" style="display: inline-block;">Sign in with Facebook</button><br /><br/>
-                        <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account" style="display: inline-block;">Sign in with Twitter</button>
-                    </div>
+                @Html.AntiForgeryToken()
+                <div class="hidden-phone">
+                    <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account" style="display: inline-block;">Sign in with Facebook</button>
+                    <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account" style="display: inline-block;">Sign in with Twitter</button>
+                </div>
+                <div class="hidden-desktop">
+                    <button type="submit" name="provider" class="zocial facebook" value="facebook" title="Sign in using your Facebook account" style="display: inline-block;">Sign in with Facebook</button><br />
+                    <br />
+                    <button type="submit" name="provider" class="zocial twitter" value="twitter" title="Sign in using your Twitter account" style="display: inline-block;">Sign in with Twitter</button>
+                </div>
                 }
                 <h3>Never forget important events! Here's a sample</h3>
                 <br />
@@ -72,6 +73,7 @@
     </div>
 </div>
 
-<div id="editModalContainerID" class="modal hide fade" data-url='@Url.Action("EditEvent", "Home")'>
-    <div id="editModalBodyID"></div>
+<div id="editModalContainerID" class="modal hide fade in" data-url='@Url.Action("EditEvent", "Home")'>
+    <div id="editModalBodyID">
+    </div>
 </div>
