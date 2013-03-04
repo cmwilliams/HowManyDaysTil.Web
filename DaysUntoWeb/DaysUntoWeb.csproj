@@ -405,6 +405,7 @@
     <None Include="Properties\PublishProfiles\howmanydaystil.com - Web Deploy.pubxml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <PropertyGroup>
