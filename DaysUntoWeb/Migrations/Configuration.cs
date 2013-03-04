@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Web;
 using DaysUntoWeb.Infrastructure.Entities;
 
 namespace DaysUntoWeb.Migrations
@@ -14,9 +15,11 @@ namespace DaysUntoWeb.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        private void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country)
+        private static void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country)
         {
-            var calendars = iCalendar.LoadFromFile(fileName);
+            var path = AppDomain.CurrentDomain.BaseDirectory + "\\Migrations\\Seed_Data\\" + fileName;
+
+            var calendars = iCalendar.LoadFromFile(path);
             var occurrences = calendars.GetOccurrences(new iCalDateTime(DateTime.Now.Year, 1, 1),
                                                        new iCalDateTime(DateTime.Now.Year, 12, 31))
                                        .Where(o => o.Period.StartTime.Year == DateTime.Now.Year);
@@ -29,7 +32,7 @@ namespace DaysUntoWeb.Migrations
                     if (!rc.Summary.Contains("("))
                     {
                         context.Holidays.AddOrUpdate(
-                            p => new { p.HolidayName, p.Country },
+                            p => new { p.HolidayName, p.Country, p.HolidayDate },
                             new Holiday
                             {
                                 HolidayDate = occurrence.Period.StartTime.Local,
@@ -44,9 +47,9 @@ namespace DaysUntoWeb.Migrations
 
         protected override void Seed(Infrastructure.Data.DaysUntoContext context)
         {
-            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\USHolidays.ics", context, "US");
-            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\CanadaHolidays.ics", context, "CA");
-            SeedHolidays(@"C:\Projects\DaysUntoWeb\DaysUntoWeb\Migrations\Seed_Data\UKHolidays.ics", context, "UK");
+            SeedHolidays("USHolidays.ics", context, "US");
+            SeedHolidays("CanadaHolidays.ics", context, "CA");
+            SeedHolidays("UKHolidays.ics", context, "UK");
 
           
         }

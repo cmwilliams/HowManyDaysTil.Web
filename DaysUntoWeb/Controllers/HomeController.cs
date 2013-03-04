@@ -24,7 +24,6 @@ namespace DaysUntoWeb.Controllers
 
         public ActionResult Index()
         {
-            
             //Grab Country Events
             var holidays = _context.Holidays
                                    .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")

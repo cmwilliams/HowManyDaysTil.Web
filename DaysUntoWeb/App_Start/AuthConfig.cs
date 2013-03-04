@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.Configuration;
 using Microsoft.Web.WebPages.OAuth;
 using DaysUntoWeb.Models;
 
@@ -23,8 +24,8 @@ namespace DaysUntoWeb
                 consumerSecret: "4eqLlX4ItOPAaU4G1gAMSLDJlzUubMVXt7MKZ3kvoaY");
 
             OAuthWebSecurity.RegisterFacebookClient(
-                appId: "281606021969932",
-                appSecret: "d9316afc5034b12cf04ac89800824369");
+                appId: WebConfigurationManager.AppSettings["FacebookAppId"],
+                appSecret: WebConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             OAuthWebSecurity.RegisterGoogleClient();
         }

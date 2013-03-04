@@ -12,10 +12,12 @@
                 <br />
                     foreach (var calendarEvent in Model.CalendarEvents)
                     {
+                        
+               
                 <div class="row">
                     <div class="span6">
                         <div class="span5">
-                            <div class="calendar event_date">
+                            <div class="calendar">
                                 <span class="month">@Html.GetMonthName(calendarEvent.CalendarEventDate)</span>
                                 <span class="day">@calendarEvent.CalendarEventDate.Day</span>
                             </div>
@@ -40,7 +42,7 @@
                 }
                 else
                 {
-                <p>Please take a moment to add an event!</p>
+                <h2>Please take a moment to add an event!</h2>
                 }
             }
             else
