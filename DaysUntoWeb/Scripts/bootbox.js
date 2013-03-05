@@ -8,7 +8,7 @@ var bootbox = window.bootbox || (function(document, $) {
 
     var _locale        = 'en',
         _defaultLocale = 'en',
-        _animate       = false,
+        _animate       = true,
         _backdrop      = 'static',
         _defaultHref   = 'javascript:;',
         _classes       = '',
