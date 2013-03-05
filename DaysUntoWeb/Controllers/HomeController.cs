@@ -27,14 +27,25 @@ namespace DaysUntoWeb.Controllers
             return _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
         }
 
+        private IList<Holiday> GetHolidays()
+        {
+            if (HttpContext.Cache["Holidays"] == null)
+            {
+                var holidays = _context.Holidays
+                                       .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")
+                                       .OrderBy(h => h.HolidayDate)
+                                       .Take(5)
+                                       .ToList();
+                HttpContext.Cache.Insert("Holidays", holidays);
+            }
+            return (IList<Holiday>) HttpContext.Cache["Holidays"];
+
+        }
+
         public ActionResult Index()
         {
             //Grab Country Events
-            var holidays = _context.Holidays
-                                   .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")
-                                   .OrderBy(h => h.HolidayDate)
-                                   .Take(5)
-                                   .ToList();
+            var holidays = GetHolidays();
 
             //Will implement country by IP addresss soon
             //var holiday = holidays.FirstOrDefault();
