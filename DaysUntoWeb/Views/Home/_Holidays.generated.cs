@@ -53,7 +53,16 @@ WriteLiteral(" id=\"upcoming-events\"");
 
 WriteLiteral(" class=\"breadcrumb\"");
 
-WriteLiteral(">\r\n        <h1>Upcoming US events </h1>\r\n        <br />\r\n");
+WriteLiteral(">\r\n        <h1>Upcoming US ");
+
+            
+            #line 6 "..\..\Views\Home\_Holidays.cshtml"
+                   Write(DateTime.Now.Year);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" events </h1>\r\n        <br />\r\n");
 
             
             #line 8 "..\..\Views\Home\_Holidays.cshtml"

@@ -58,7 +58,10 @@ namespace DaysUntoWeb.Controllers
             {
                 userEvents =
                     user.CalendarEvents
-                        .Where(h => h.CalendarEventDate >= DateTime.Today.Date)
+                        .Where(
+                            h =>
+                            h.CalendarEventDate.Date >= DateTime.Today.Date &&
+                            h.CalendarEventDate.Date <= new DateTime(DateTime.Now.Year, 12, 31))
                         .OrderBy(c => c.CalendarEventDate)
                         .ToList();
             }

@@ -75,7 +75,16 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                <h1>Your upcoming events</h1>\r\n");
+WriteLiteral("                <h1>Your upcoming ");
+
+            
+            #line 11 "..\..\Views\Home\_Events.cshtml"
+                             Write(DateTime.Now.Year);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" events</h1>\r\n");
 
 WriteLiteral("                <br />\r\n");
 
@@ -168,18 +177,18 @@ WriteLiteral(" title=\"edit event\"");
 
 WriteLiteral(" style=\"cursor: pointer\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1352), Tuple.Create("\"", 1450)
-, Tuple.Create(Tuple.Create("", 1362), Tuple.Create("showModal(\'#editModalContainerID\',", 1362), true)
-, Tuple.Create(Tuple.Create(" ", 1396), Tuple.Create("\'#editModalBodyID\',", 1397), true)
-, Tuple.Create(Tuple.Create(" ", 1416), Tuple.Create("\'", 1417), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1371), Tuple.Create("\"", 1469)
+, Tuple.Create(Tuple.Create("", 1381), Tuple.Create("showModal(\'#editModalContainerID\',", 1381), true)
+, Tuple.Create(Tuple.Create(" ", 1415), Tuple.Create("\'#editModalBodyID\',", 1416), true)
+, Tuple.Create(Tuple.Create(" ", 1435), Tuple.Create("\'", 1436), true)
             
             #line 28 "..\..\Views\Home\_Events.cshtml"
-                                                                                       , Tuple.Create(Tuple.Create("", 1418), Tuple.Create<System.Object, System.Int32>(calendarEvent.CalendarEventId
+                                                                                       , Tuple.Create(Tuple.Create("", 1437), Tuple.Create<System.Object, System.Int32>(calendarEvent.CalendarEventId
             
             #line default
             #line hidden
-, 1418), false)
-, Tuple.Create(Tuple.Create("", 1448), Tuple.Create("\')", 1448), true)
+, 1437), false)
+, Tuple.Create(Tuple.Create("", 1467), Tuple.Create("\')", 1467), true)
 );
 
 WriteLiteral("><i");
@@ -407,9 +416,9 @@ WriteLiteral("                <br />\r\n");
 
 WriteLiteral("                <p>\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3893), Tuple.Create("\"", 3918)
-, Tuple.Create(Tuple.Create("", 3899), Tuple.Create<System.Object, System.Int32>(Href("~/Images/sample.PNG")
-, 3899), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 3912), Tuple.Create("\"", 3937)
+, Tuple.Create(Tuple.Create("", 3918), Tuple.Create<System.Object, System.Int32>(Href("~/Images/sample.PNG")
+, 3918), false)
 );
 
 WriteLiteral(" />\r\n                </p>\r\n");
