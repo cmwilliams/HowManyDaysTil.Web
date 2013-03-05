@@ -22,6 +22,11 @@ namespace DaysUntoWeb.Controllers
             _context = new DaysUntoContext();
         }
 
+        private UserProfile GetUser()
+        {
+            return _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+        }
+
         public ActionResult Index()
         {
             //Grab Country Events
@@ -30,12 +35,14 @@ namespace DaysUntoWeb.Controllers
                                    .OrderBy(h => h.HolidayDate)
                                    .Take(5)
                                    .ToList();
-            var holiday = holidays.FirstOrDefault();
-            var country = holiday == null ? "US" : holiday.Country;
+
+            //Will implement country by IP addresss soon
+            //var holiday = holidays.FirstOrDefault();
+            //var country = holiday == null ? "US" : holiday.Country;
 
             //Grab User Events
             var userEvents = new List<CalendarEvent>();
-            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user != null)
             {
                 userEvents =
@@ -50,7 +57,6 @@ namespace DaysUntoWeb.Controllers
             var model = new HomeViewModel
                             {
                                 Holidays = holidays,
-                                Country = country,
                                 CalendarEvents = userEvents
                             };
 
@@ -79,7 +85,7 @@ namespace DaysUntoWeb.Controllers
                         var rc = occurrence.Source as IRecurringComponent;
                         if (rc != null)
                         {
-                            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+                            var user = GetUser();
                             if (user != null)
                             {
                                 var existingEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventDate == occurrence.Period.StartTime.Local && c.Name == rc.Summary);
@@ -112,7 +118,7 @@ namespace DaysUntoWeb.Controllers
             {
                 var eventName = form["calendarName"];
                 var eventDate = form["calendarDate"];
-                var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+                var user = GetUser();
                 if (user != null)
                 {
                     user.CalendarEvents.Add(new CalendarEvent
@@ -141,7 +147,7 @@ namespace DaysUntoWeb.Controllers
         {
             CalendarEvent calendarEvent = null;
 
-             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user != null)
             {
                 calendarEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == id);
@@ -159,7 +165,7 @@ namespace DaysUntoWeb.Controllers
         [HttpPost]
         public ActionResult EditEvent(CalendarEvent calendarEvent)
         {
-            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user == null)
                 return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
 
@@ -180,7 +186,7 @@ namespace DaysUntoWeb.Controllers
         [HttpPost]
         public ActionResult DeleteEvent(int id)
         {
-             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+             var user = GetUser();
             if (user == null)
                 return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
 
