@@ -11,7 +11,7 @@
                         A countdown for your important events!
                         <br />
                         <br />
-                        @if (WebSecurity.IsAuthenticated)
+                        @if (Request.IsAuthenticated)
                         {
                             @Html.Partial("_AddEvent")
                         }

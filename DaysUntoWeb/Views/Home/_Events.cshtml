@@ -4,7 +4,7 @@
 <div class="row">
     <div class="span6">
         <div id="your-upcoming-events" class="breadcrumb">
-            @if (WebSecurity.IsAuthenticated)
+            @if (Request.IsAuthenticated)
             {
                 if (Model.CalendarEvents.Any())
                 {
