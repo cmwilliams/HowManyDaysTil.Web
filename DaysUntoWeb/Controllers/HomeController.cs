@@ -22,25 +22,46 @@ namespace DaysUntoWeb.Controllers
             _context = new DaysUntoContext();
         }
 
+        private UserProfile GetUser()
+        {
+            return _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+        }
+
+        private IList<Holiday> GetHolidays()
+        {
+            if (HttpContext.Cache["Holidays"] == null)
+            {
+                var holidays = _context.Holidays
+                                       .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")
+                                       .OrderBy(h => h.HolidayDate)
+                                       .Take(5)
+                                       .ToList();
+                HttpContext.Cache.Insert("Holidays", holidays);
+            }
+            return (IList<Holiday>) HttpContext.Cache["Holidays"];
+
+        }
+
         public ActionResult Index()
         {
             //Grab Country Events
-            var holidays = _context.Holidays
-                                   .Where(h => h.HolidayDate >= DateTime.Today.Date && h.Country == "US")
-                                   .OrderBy(h => h.HolidayDate)
-                                   .Take(5)
-                                   .ToList();
-            var holiday = holidays.FirstOrDefault();
-            var country = holiday == null ? "US" : holiday.Country;
+            var holidays = GetHolidays();
+
+            //Will implement country by IP addresss soon
+            //var holiday = holidays.FirstOrDefault();
+            //var country = holiday == null ? "US" : holiday.Country;
 
             //Grab User Events
             var userEvents = new List<CalendarEvent>();
-            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user != null)
             {
                 userEvents =
                     user.CalendarEvents
-                        .Where(h => h.CalendarEventDate >= DateTime.Today.Date)
+                        .Where(
+                            h =>
+                            h.CalendarEventDate.Date >= DateTime.Today.Date &&
+                            h.CalendarEventDate.Date <= new DateTime(DateTime.Now.Year, 12, 31))
                         .OrderBy(c => c.CalendarEventDate)
                         .ToList();
             }
@@ -50,7 +71,6 @@ namespace DaysUntoWeb.Controllers
             var model = new HomeViewModel
                             {
                                 Holidays = holidays,
-                                Country = country,
                                 CalendarEvents = userEvents
                             };
 
@@ -79,7 +99,7 @@ namespace DaysUntoWeb.Controllers
                         var rc = occurrence.Source as IRecurringComponent;
                         if (rc != null)
                         {
-                            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+                            var user = GetUser();
                             if (user != null)
                             {
                                 var existingEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventDate == occurrence.Period.StartTime.Local && c.Name == rc.Summary);
@@ -112,7 +132,7 @@ namespace DaysUntoWeb.Controllers
             {
                 var eventName = form["calendarName"];
                 var eventDate = form["calendarDate"];
-                var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+                var user = GetUser();
                 if (user != null)
                 {
                     user.CalendarEvents.Add(new CalendarEvent
@@ -137,25 +157,11 @@ namespace DaysUntoWeb.Controllers
 
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public PartialViewResult EditEvent(int id)
         {
             CalendarEvent calendarEvent = null;
 
-             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user != null)
             {
                 calendarEvent = user.CalendarEvents.SingleOrDefault(c => c.CalendarEventId == id);
@@ -173,7 +179,7 @@ namespace DaysUntoWeb.Controllers
         [HttpPost]
         public ActionResult EditEvent(CalendarEvent calendarEvent)
         {
-            var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+            var user = GetUser();
             if (user == null)
                 return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
 
@@ -194,7 +200,7 @@ namespace DaysUntoWeb.Controllers
         [HttpPost]
         public ActionResult DeleteEvent(int id)
         {
-             var user = _context.UserProfiles.SingleOrDefault(u => u.UserId == WebSecurity.CurrentUserId);
+             var user = GetUser();
             if (user == null)
                 return RedirectToAction("Index").Error("We couldn't find you. Please try logging in again.");
 

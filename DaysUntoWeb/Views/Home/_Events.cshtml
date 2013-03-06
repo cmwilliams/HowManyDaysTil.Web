@@ -4,11 +4,11 @@
 <div class="row">
     <div class="span6">
         <div id="your-upcoming-events" class="breadcrumb">
-            @if (WebSecurity.IsAuthenticated)
+            @if (Request.IsAuthenticated)
             {
                 if (Model.CalendarEvents.Any())
                 {
-                <h1>Your upcoming events</h1>
+                <h1>Your upcoming @DateTime.Now.Year events</h1>
                 <br />
                     foreach (var calendarEvent in Model.CalendarEvents)
                     {

@@ -200,6 +200,31 @@
     <Compile Include="Models\EditEventViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\EditEvent.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditEvent.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_AddEvent.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AddEvent.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_Events.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Events.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\_Holidays.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Holidays.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\datepicker.css" />
@@ -368,9 +393,10 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -399,16 +425,28 @@
     <Content Include="Views\Shared\_Flash.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\_AddEvent.cshtml" />
+    <Content Include="Views\Home\_AddEvent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AddEvent.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\_Holidays.cshtml" />
+    <Content Include="Views\Home\_Holidays.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Holidays.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\_Events.cshtml" />
+    <Content Include="Views\Home\_Events.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Events.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\EditEvent.cshtml" />
+    <Content Include="Views\Home\EditEvent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditEvent.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\daysunto.com - Web Deploy.pubxml" />
