@@ -450,6 +450,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\daysunto.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\howmanydaystil - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\howmanydaystil - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\howmanydaystil.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\howmanydaystil.com - Web Deploy.pubxml" />
     <None Include="Web.Release.config">
