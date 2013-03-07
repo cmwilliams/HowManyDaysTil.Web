@@ -1,21 +1,18 @@
 using System;
-using System.Linq;
-using System.Web;
-using DaysUntoWeb.Infrastructure.Entities;
+using System.Data.Entity.Migrations;
+using DDay.iCal;
+using HowManyDaysTil.Web.Infrastructure.Entities;
 
-namespace DaysUntoWeb.Migrations
+namespace HowManyDaysTil.Web.Migrations
 {
-    using System.Data.Entity.Migrations;
-    using DDay.iCal;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Infrastructure.Data.DaysUntoContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Infrastructure.Data.HowManyDaysTilContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        private static void SeedHolidays(string fileName, Infrastructure.Data.DaysUntoContext context, string country, int endYear)
+        private static void SeedHolidays(string fileName, Infrastructure.Data.HowManyDaysTilContext context, string country, int endYear)
         {
             var path = AppDomain.CurrentDomain.BaseDirectory + "\\Migrations\\Seed_Data\\" + fileName;
 
@@ -44,7 +41,7 @@ namespace DaysUntoWeb.Migrations
             }
         }
 
-        protected override void Seed(Infrastructure.Data.DaysUntoContext context)
+        protected override void Seed(Infrastructure.Data.HowManyDaysTilContext context)
         {
             SeedHolidays("USHolidays.ics", context, "US", 2020);
             SeedHolidays("CanadaHolidays.ics", context, "CA", 2020);

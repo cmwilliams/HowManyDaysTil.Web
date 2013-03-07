@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DaysUntoWeb.Infrastructure.Entities
+namespace HowManyDaysTil.Web.Infrastructure.Entities
 {
     [Table("UserProfile")]
     public class UserProfile

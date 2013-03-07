@@ -1,11 +1,11 @@
 ﻿using System.Data.Entity;
-using DaysUntoWeb.Infrastructure.Entities;
+using HowManyDaysTil.Web.Infrastructure.Entities;
 
-namespace DaysUntoWeb.Infrastructure.Data
+namespace HowManyDaysTil.Web.Infrastructure.Data
 {
-    public class DaysUntoContext : DbContext
+    public class HowManyDaysTilContext : DbContext
     {
-        public DaysUntoContext()
+        public HowManyDaysTilContext()
             : base("name=DefaultConnection")
         {
 

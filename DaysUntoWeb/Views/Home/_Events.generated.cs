@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DaysUntoWeb.Views.Home
+namespace HowManyDaysTil.Web.Views.Home
 {
     using System;
     using System.Collections.Generic;
@@ -29,14 +29,14 @@ namespace DaysUntoWeb.Views.Home
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\Home\_Events.cshtml"
-    using DaysUntoWeb.Helpers;
+    using HowManyDaysTil.Web.Helpers;
     
     #line default
     #line hidden
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "1.5.4.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_Events.cshtml")]
-    public partial class Events : System.Web.Mvc.WebViewPage<DaysUntoWeb.Models.HomeViewModel>
+    public partial class Events : System.Web.Mvc.WebViewPage<HowManyDaysTil.Web.Models.HomeViewModel>
     {
         public Events()
         {
@@ -177,18 +177,18 @@ WriteLiteral(" title=\"edit event\"");
 
 WriteLiteral(" style=\"cursor: pointer\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1371), Tuple.Create("\"", 1469)
-, Tuple.Create(Tuple.Create("", 1381), Tuple.Create("showModal(\'#editModalContainerID\',", 1381), true)
-, Tuple.Create(Tuple.Create(" ", 1415), Tuple.Create("\'#editModalBodyID\',", 1416), true)
-, Tuple.Create(Tuple.Create(" ", 1435), Tuple.Create("\'", 1436), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1385), Tuple.Create("\"", 1483)
+, Tuple.Create(Tuple.Create("", 1395), Tuple.Create("showModal(\'#editModalContainerID\',", 1395), true)
+, Tuple.Create(Tuple.Create(" ", 1429), Tuple.Create("\'#editModalBodyID\',", 1430), true)
+, Tuple.Create(Tuple.Create(" ", 1449), Tuple.Create("\'", 1450), true)
             
             #line 28 "..\..\Views\Home\_Events.cshtml"
-                                                                                       , Tuple.Create(Tuple.Create("", 1437), Tuple.Create<System.Object, System.Int32>(calendarEvent.CalendarEventId
+                                                                                       , Tuple.Create(Tuple.Create("", 1451), Tuple.Create<System.Object, System.Int32>(calendarEvent.CalendarEventId
             
             #line default
             #line hidden
-, 1437), false)
-, Tuple.Create(Tuple.Create("", 1467), Tuple.Create("\')", 1467), true)
+, 1451), false)
+, Tuple.Create(Tuple.Create("", 1481), Tuple.Create("\')", 1481), true)
 );
 
 WriteLiteral("><i");
@@ -416,9 +416,9 @@ WriteLiteral("                <br />\r\n");
 
 WriteLiteral("                <p>\r\n                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3912), Tuple.Create("\"", 3937)
-, Tuple.Create(Tuple.Create("", 3918), Tuple.Create<System.Object, System.Int32>(Href("~/Images/sample.PNG")
-, 3918), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 3926), Tuple.Create("\"", 3951)
+, Tuple.Create(Tuple.Create("", 3932), Tuple.Create<System.Object, System.Int32>(Href("~/Images/sample.PNG")
+, 3932), false)
 );
 
 WriteLiteral(" />\r\n                </p>\r\n");

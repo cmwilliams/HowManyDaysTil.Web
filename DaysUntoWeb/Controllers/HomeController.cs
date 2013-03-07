@@ -4,22 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DDay.iCal;
-using DaysUntoWeb.Infrastructure.Data;
-using DaysUntoWeb.Infrastructure.Entities;
-using DaysUntoWeb.Models;
+using HowManyDaysTil.Web.Helpers;
+using HowManyDaysTil.Web.Infrastructure.Data;
+using HowManyDaysTil.Web.Infrastructure.Entities;
+using HowManyDaysTil.Web.Models;
 using WebMatrix.WebData;
-using DaysUntoWeb.Helpers;
 
-
-namespace DaysUntoWeb.Controllers
+namespace HowManyDaysTil.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private DaysUntoContext _context;
+        private readonly HowManyDaysTilContext _context;
 
         public HomeController()
         {
-            _context = new DaysUntoContext();
+            _context = new HowManyDaysTilContext();
         }
 
         private UserProfile GetUser()

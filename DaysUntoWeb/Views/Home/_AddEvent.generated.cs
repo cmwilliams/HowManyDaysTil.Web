@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DaysUntoWeb.Views.Home
+namespace HowManyDaysTil.Web.Views.Home
 {
     using System;
     using System.Collections.Generic;

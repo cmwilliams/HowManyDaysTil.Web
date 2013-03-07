@@ -1,7 +1,7 @@
 ﻿using System.Web.Configuration;
 using Microsoft.Web.WebPages.OAuth;
 
-namespace DaysUntoWeb
+namespace HowManyDaysTil.Web.App_Start
 {
     public static class AuthConfig
     {

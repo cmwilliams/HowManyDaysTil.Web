@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using DaysUntoWeb.Infrastructure.Data;
-using DaysUntoWeb.Infrastructure.Entities;
 using DotNetOpenAuth.AspNet;
+using HowManyDaysTil.Web.Infrastructure.Data;
+using HowManyDaysTil.Web.Infrastructure.Entities;
+using HowManyDaysTil.Web.Models;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using DaysUntoWeb.Models;
 
-namespace DaysUntoWeb.Controllers
+namespace HowManyDaysTil.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -260,7 +259,7 @@ namespace DaysUntoWeb.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (var db = new DaysUntoContext())
+                using (var db = new HowManyDaysTilContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaysUntoWeb", "DaysUntoWeb\DaysUntoWeb.csproj", "{4F95F0F8-1B47-4CCD-8AA4-00B71FE844D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowManyDaysTil.Web", "DaysUntoWeb\HowManyDaysTil.Web.csproj", "{4F95F0F8-1B47-4CCD-8AA4-00B71FE844D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

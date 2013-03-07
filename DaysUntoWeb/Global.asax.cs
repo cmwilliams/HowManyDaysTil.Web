@@ -2,9 +2,10 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using HowManyDaysTil.Web.App_Start;
 using WebMatrix.WebData;
 
-namespace DaysUntoWeb
+namespace HowManyDaysTil.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq.Expressions;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
 
-namespace DaysUntoWeb.Helpers
+namespace HowManyDaysTil.Web.Helpers
 {
     public static class HtmlHelpers
     {

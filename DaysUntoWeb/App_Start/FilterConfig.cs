@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace DaysUntoWeb
+namespace HowManyDaysTil.Web.App_Start
 {
     public class FilterConfig
     {

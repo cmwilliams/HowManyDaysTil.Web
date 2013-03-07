@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace DaysUntoWeb.Helpers
+namespace HowManyDaysTil.Web.Helpers
 {
     internal static class FlashMessageExtensions
     {

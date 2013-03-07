@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DaysUntoWeb</RootNamespace>
-    <AssemblyName>DaysUntoWeb</AssemblyName>
+    <RootNamespace>HowManyDaysTil.Web</RootNamespace>
+    <AssemblyName>HowManyDaysTil.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -191,7 +191,7 @@
     </Compile>
     <Compile Include="Helpers\FlashMessageExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Infrastructure\Data\DaysUntoContext.cs" />
+    <Compile Include="Infrastructure\Data\HowManyDaysTilContext.cs" />
     <Compile Include="Infrastructure\Entities\CalendarEvent.cs" />
     <Compile Include="Infrastructure\Entities\Holiday.cs" />
     <Compile Include="Infrastructure\Entities\UserProfile.cs" />

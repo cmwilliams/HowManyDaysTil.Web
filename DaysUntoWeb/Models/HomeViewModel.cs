@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using DaysUntoWeb.Infrastructure.Entities;
+using HowManyDaysTil.Web.Infrastructure.Entities;
 
-namespace DaysUntoWeb.Models
+namespace HowManyDaysTil.Web.Models
 {
     public class HomeViewModel
     {

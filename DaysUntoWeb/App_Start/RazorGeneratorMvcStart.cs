@@ -1,11 +1,12 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using HowManyDaysTil.Web.App_Start;
 using RazorGenerator.Mvc;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(DaysUntoWeb.App_Start.RazorGeneratorMvcStart), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(RazorGeneratorMvcStart), "Start")]
 
-namespace DaysUntoWeb.App_Start {
+namespace HowManyDaysTil.Web.App_Start {
     public static class RazorGeneratorMvcStart {
         public static void Start() {
             var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {

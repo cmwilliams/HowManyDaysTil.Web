@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DaysUntoWeb.Views.Home
+namespace HowManyDaysTil.Web.Views.Home
 {
     using System;
     using System.Collections.Generic;
@@ -29,14 +29,14 @@ namespace DaysUntoWeb.Views.Home
     using System.Web.WebPages;
     
     #line 1 "..\..\Views\Home\_Holidays.cshtml"
-    using DaysUntoWeb.Helpers;
+    using HowManyDaysTil.Web.Helpers;
     
     #line default
     #line hidden
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "1.5.4.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/_Holidays.cshtml")]
-    public partial class Holidays : System.Web.Mvc.WebViewPage<DaysUntoWeb.Models.HomeViewModel>
+    public partial class Holidays : System.Web.Mvc.WebViewPage<HowManyDaysTil.Web.Models.HomeViewModel>
     {
         public Holidays()
         {

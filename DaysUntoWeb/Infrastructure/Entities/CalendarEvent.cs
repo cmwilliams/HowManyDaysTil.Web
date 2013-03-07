@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace DaysUntoWeb.Infrastructure.Entities
+namespace HowManyDaysTil.Web.Infrastructure.Entities
 {
     public class CalendarEvent
     {

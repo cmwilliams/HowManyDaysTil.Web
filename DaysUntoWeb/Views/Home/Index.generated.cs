@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DaysUntoWeb.Views.Home
+namespace HowManyDaysTil.Web.Views.Home
 {
     using System;
     using System.Collections.Generic;
@@ -28,15 +28,9 @@ namespace DaysUntoWeb.Views.Home
     using System.Web.UI;
     using System.Web.WebPages;
     
-    #line 1 "..\..\Views\Home\Index.cshtml"
-    using DaysUntoWeb.Helpers;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "1.5.4.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/Index.cshtml")]
-    public partial class Index : System.Web.Mvc.WebViewPage<DaysUntoWeb.Models.HomeViewModel>
+    public partial class Index : System.Web.Mvc.WebViewPage<HowManyDaysTil.Web.Models.HomeViewModel>
     {
         public Index()
         {
@@ -80,13 +74,13 @@ WriteLiteral("></i>\r\n                        <h1>How Many Days Til</h1>\r\n   
 "                  <br />\r\n");
 
             
-            #line 14 "..\..\Views\Home\Index.cshtml"
+            #line 13 "..\..\Views\Home\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\Home\Index.cshtml"
+            #line 13 "..\..\Views\Home\Index.cshtml"
                          if (Request.IsAuthenticated)
                         {
                             
@@ -94,14 +88,14 @@ WriteLiteral("></i>\r\n                        <h1>How Many Days Til</h1>\r\n   
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\Home\Index.cshtml"
+            #line 15 "..\..\Views\Home\Index.cshtml"
                        Write(Html.Partial("_AddEvent"));
 
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\Home\Index.cshtml"
+            #line 15 "..\..\Views\Home\Index.cshtml"
                                                       
                         }
 
@@ -122,7 +116,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("            ");
 
             
-            #line 24 "..\..\Views\Home\Index.cshtml"
+            #line 23 "..\..\Views\Home\Index.cshtml"
        Write(Html.Partial("_Holidays", Model));
 
             
@@ -139,7 +133,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 28 "..\..\Views\Home\Index.cshtml"
+            #line 27 "..\..\Views\Home\Index.cshtml"
    Write(Html.Partial("_Events", Model));
 
             
