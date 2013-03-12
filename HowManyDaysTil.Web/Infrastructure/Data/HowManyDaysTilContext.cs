@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using HowManyDaysTil.Web.Infrastructure.Entities;
+using HowManyDaysTil.Web.Migrations;
 
 namespace HowManyDaysTil.Web.Infrastructure.Data
 {
@@ -9,6 +10,11 @@ namespace HowManyDaysTil.Web.Infrastructure.Data
             : base("name=DefaultConnection")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HowManyDaysTilContext, Configuration>());
         }
 
         public DbSet<CalendarEvent> CalendarEvents { get; set; }
