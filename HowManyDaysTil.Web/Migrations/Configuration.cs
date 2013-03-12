@@ -10,6 +10,7 @@ namespace HowManyDaysTil.Web.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         private static void SeedHolidays(string fileName, Infrastructure.Data.HowManyDaysTilContext context, string country, int endYear)
