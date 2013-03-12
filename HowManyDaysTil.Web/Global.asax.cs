@@ -18,7 +18,6 @@ namespace HowManyDaysTil.Web
         protected void Application_Start()
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HowManyDaysTilContext, Configuration>());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

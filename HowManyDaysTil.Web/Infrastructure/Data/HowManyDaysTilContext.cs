@@ -9,16 +9,17 @@ namespace HowManyDaysTil.Web.Infrastructure.Data
         public HowManyDaysTilContext()
             : base("name=DefaultConnection")
         {
-
         }
+
+
+        public DbSet<CalendarEvent> CalendarEvents { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Holiday> Holidays { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<HowManyDaysTilContext, Configuration>());
         }
 
-        public DbSet<CalendarEvent> CalendarEvents { get; set; }
-        public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<Holiday> Holidays { get; set; }
     }
 }
