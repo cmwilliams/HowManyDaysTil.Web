@@ -1,8 +1,11 @@
-﻿using System.Web.Http;
+﻿using System.Data.Entity;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using HowManyDaysTil.Web.App_Start;
+using HowManyDaysTil.Web.Infrastructure.Data;
+using HowManyDaysTil.Web.Migrations;
 using WebMatrix.WebData;
 
 namespace HowManyDaysTil.Web
@@ -15,6 +18,7 @@ namespace HowManyDaysTil.Web
         protected void Application_Start()
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HowManyDaysTilContext, Configuration>());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
