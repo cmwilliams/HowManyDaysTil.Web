@@ -64,7 +64,8 @@ local.properties
 *.dotCover
 Web.Release.config
 *.pubxml
-
+*.mdf
+*.ldf
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 #packages/
